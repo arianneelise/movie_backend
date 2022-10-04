@@ -31,14 +31,15 @@ users_schema = UserSchema(many=True)
 class Reviews(db.Model):
   __tablename__ = 'reviews'
 
-  id = db.Column(db.String(), primary_key=True, nullable=False, unique=True)
+  id = db.Column(UUID(as_uuid=True), default=uuid.uuid4, primary_key=True, nullable=False, unique=True)
+  movie_id = db.Column(db.String(), nullable=False)
   title = db.Column(db.String(), nullable=False)
   rating = db.Column(db.Integer, nullable=False)
   review = db.Column(db.String(500), nullable=True)
   user_id = db.Column(UUID(as_uuid=True), db.ForeignKey('users.id'), nullable=False)
 
-  def __init__(self, id, title, rating, review, user_id):
-    self.id = id
+  def __init__(self, movie_id, title, rating, review, user_id):
+    self.movie_id = movie_id
     self.title = title
     self.rating = rating
     self.review = review
