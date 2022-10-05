@@ -1,9 +1,6 @@
-from crypt import methods
-from movie import app
 from flask import request
-from movie import endpoints
+from movie import app, endpoints
 import bcrypt
-# from movie.endpoints import add_user, search_movie, add_review, get_all_users, get_review, get_reviews_by_id
 
 @app.route('/add-user', methods=["POST"])
 def add():

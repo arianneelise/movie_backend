@@ -1,7 +1,7 @@
 import json
 from operator import pos
 import flask 
-from movie.utelly_request import utelly_request
+from movie.movie_request import utelly_request
 
 def search_movie(req:flask.Request) -> flask.Response:
   response = req.get_json()
