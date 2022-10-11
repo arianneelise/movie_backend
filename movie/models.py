@@ -70,7 +70,7 @@ class Friends(db.Model):
 
 class FriendsSchema(ma.Schema):
   class Meta:
-    fields = ('user_one', 'user_two')
+    fields = ('user_one_id', 'user_two_id')
 
 friend_schema = FriendsSchema()
 
