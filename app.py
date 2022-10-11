@@ -26,5 +26,9 @@ def get_user_review():
 def get_reviews():
   return endpoints.get_reviews_by_id(request)
 
+@app.route('/add-friend', methods=["POST"])
+def add_friend():
+  return endpoints.add_friend(request)
+
 if __name__ == '__main__':
   app.run()

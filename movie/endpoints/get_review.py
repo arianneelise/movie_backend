@@ -1,7 +1,7 @@
 import flask
 from flask import jsonify
 from movie import db
-from movie.models import Reviews, Users, reviews_schema
+from movie.models import Users, reviews_schema
 
 def get_review(req:flask.Request) -> flask.Response:
   response = req.get_json()
